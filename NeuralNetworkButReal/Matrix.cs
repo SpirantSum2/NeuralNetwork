@@ -55,20 +55,20 @@ namespace NeuralNetworkButReal
             return _height;
         }
 
-        public T GetValue(int i, int j)
+        public T GetValue(int row, int column)
         {
-            ArgumentOutOfRangeException.ThrowIfGreaterThanOrEqual(i, _height);
-            ArgumentOutOfRangeException.ThrowIfGreaterThanOrEqual(j, _width);
+            ArgumentOutOfRangeException.ThrowIfGreaterThanOrEqual(column, _height);
+            ArgumentOutOfRangeException.ThrowIfGreaterThanOrEqual(row, _width);
             
-            return _vals[i, j];
+            return _vals[column, row];
         }
 
-        public void SetValue(int i, int j, T newVal)
+        public void SetValue(int row, int column, T newVal)
         {
-            ArgumentOutOfRangeException.ThrowIfGreaterThanOrEqual(i, _height);
-            ArgumentOutOfRangeException.ThrowIfGreaterThanOrEqual(j, _width);
+            ArgumentOutOfRangeException.ThrowIfGreaterThanOrEqual(column, _height);
+            ArgumentOutOfRangeException.ThrowIfGreaterThanOrEqual(row, _width);
 
-            _vals[i, j] = newVal;
+            _vals[column, row] = newVal;
         }
         
         public static Matrix<T> operator *(Matrix<T> a, Matrix<T> b) // There's no way to be able to add a Matrix<float> and a
