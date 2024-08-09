@@ -27,6 +27,24 @@ namespace NeuralNetworkButReal
             _vals = values;
         }
 
+        public Matrix(int h, T[] values) // a vector
+        {
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(h, nameof(h));
+
+            _width = 1;
+            _height = h;
+
+            if (values.GetLength(0) != _height)
+                throw new ArgumentException("Vector values length does not match argument");
+
+            _vals = new T[_height, _width];
+            
+            for (int i = 0; i < _height; i++)
+            {
+                _vals[0, i] = values[i];
+            }
+        }
+
         public int GetWidth() 
         {
             return _width;
