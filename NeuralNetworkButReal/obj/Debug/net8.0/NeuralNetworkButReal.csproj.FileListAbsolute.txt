@@ -1,0 +1,15 @@
+C:\Users\sudee\RiderProjects\NeuralNetworkButReal\NeuralNetworkButReal\bin\Debug\net8.0\NeuralNetworkButReal.exe
+C:\Users\sudee\RiderProjects\NeuralNetworkButReal\NeuralNetworkButReal\bin\Debug\net8.0\NeuralNetworkButReal.deps.json
+C:\Users\sudee\RiderProjects\NeuralNetworkButReal\NeuralNetworkButReal\bin\Debug\net8.0\NeuralNetworkButReal.runtimeconfig.json
+C:\Users\sudee\RiderProjects\NeuralNetworkButReal\NeuralNetworkButReal\bin\Debug\net8.0\NeuralNetworkButReal.dll
+C:\Users\sudee\RiderProjects\NeuralNetworkButReal\NeuralNetworkButReal\bin\Debug\net8.0\NeuralNetworkButReal.pdb
+C:\Users\sudee\RiderProjects\NeuralNetworkButReal\NeuralNetworkButReal\obj\Debug\net8.0\NeuralNetworkButReal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sudee\RiderProjects\NeuralNetworkButReal\NeuralNetworkButReal\obj\Debug\net8.0\NeuralNetworkButReal.AssemblyInfoInputs.cache
+C:\Users\sudee\RiderProjects\NeuralNetworkButReal\NeuralNetworkButReal\obj\Debug\net8.0\NeuralNetworkButReal.AssemblyInfo.cs
+C:\Users\sudee\RiderProjects\NeuralNetworkButReal\NeuralNetworkButReal\obj\Debug\net8.0\NeuralNetworkButReal.csproj.CoreCompileInputs.cache
+C:\Users\sudee\RiderProjects\NeuralNetworkButReal\NeuralNetworkButReal\obj\Debug\net8.0\NeuralNetworkButReal.sourcelink.json
+C:\Users\sudee\RiderProjects\NeuralNetworkButReal\NeuralNetworkButReal\obj\Debug\net8.0\NeuralNetworkButReal.dll
+C:\Users\sudee\RiderProjects\NeuralNetworkButReal\NeuralNetworkButReal\obj\Debug\net8.0\refint\NeuralNetworkButReal.dll
+C:\Users\sudee\RiderProjects\NeuralNetworkButReal\NeuralNetworkButReal\obj\Debug\net8.0\NeuralNetworkButReal.pdb
+C:\Users\sudee\RiderProjects\NeuralNetworkButReal\NeuralNetworkButReal\obj\Debug\net8.0\NeuralNetworkButReal.genruntimeconfig.cache
+C:\Users\sudee\RiderProjects\NeuralNetworkButReal\NeuralNetworkButReal\obj\Debug\net8.0\ref\NeuralNetworkButReal.dll
