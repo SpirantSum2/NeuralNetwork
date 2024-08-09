@@ -39,25 +39,23 @@ namespace NeuralNetworkButReal
 
         public T GetValue(int i, int j)
         {
-            if (i > _height)
-                throw new ArgumentOutOfRangeException(nameof(i));
-            if (j > _width)
-                throw new ArgumentOutOfRangeException(nameof(j));
+            ArgumentOutOfRangeException.ThrowIfGreaterThanOrEqual(i, _height);
+            ArgumentOutOfRangeException.ThrowIfGreaterThanOrEqual(j, _width);
             
             return _vals[i, j];
         }
 
         public void SetValue(int i, int j, T newVal)
         {
-            ArgumentOutOfRangeException.ThrowIfGreaterThan(i, _height);
-            ArgumentOutOfRangeException.ThrowIfGreaterThan(j, _width);
+            ArgumentOutOfRangeException.ThrowIfGreaterThanOrEqual(i, _height);
+            ArgumentOutOfRangeException.ThrowIfGreaterThanOrEqual(j, _width);
 
             _vals[i, j] = newVal;
         }
         
-        public static Matrix<T> operator*(Matrix<T> a, Matrix<T> b) // There's no way to be able to add a Matrix<float> and a
-        {                                                           // Matrix <int> or similar, so both have to be same type
-                                                                    // It's the user's problem to figure this stuff out
+        public static Matrix<T> operator *(Matrix<T> a, Matrix<T> b) // There's no way to be able to add a Matrix<float> and a
+        {                                                            // Matrix <int> or similar, so both have to be same type
+                                                                     // It's the user's problem to figure this stuff out
             int dotSize = a.GetWidth();
             if (dotSize != b.GetHeight())
                 throw new ArgumentException("First matrix width must equal second matrix height");
@@ -84,6 +82,26 @@ namespace NeuralNetworkButReal
            }
             
             return new Matrix<T>(newWidth, newHeight, newVals);
+        }
+
+        public static Matrix<T> operator +(Matrix<T> a, Matrix<T> b)
+        {
+            if (a.GetWidth() != b.GetWidth())
+                throw new ArgumentException("Matrices must have the same width to be added");
+            if (a.GetHeight() != b.GetHeight())
+                throw new ArgumentException("Matrices must have the same height to be added");
+
+            T[,] newVals = new T[a.GetHeight(), a.GetWidth()];
+            
+            for (int i = 0; i < a.GetHeight(); i++)
+            {
+                for (int j = 0; j < a.GetWidth(); j++)
+                {
+                    newVals[i, j] = a.GetValue(i, j) + b.GetValue(i, j);
+                }
+            }
+
+            return new Matrix<T>(a.GetWidth(), a.GetHeight(), newVals);
         }
         
     }
