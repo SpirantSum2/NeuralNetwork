@@ -12,7 +12,7 @@ public class Network
         _noLayers = _layerSizes.Length;
         _layers = new Layer[_noLayers];
         
-        for (int i = 0; i < _noLayers - 2; i++) // The last output layer does not need to exist; it does no calculation
+        for (int i = 0; i < _noLayers - 1; i++) // The last output layer does not need to exist; it does no calculation
         {
             _layers[i] = new Layer(_layerSizes[i], _layerSizes[i + 1]);
         }
@@ -24,7 +24,7 @@ public class Network
         
         Matrix<double> current = new Matrix<double>(_layerSizes[0], inputs);
 
-        for (int i = 0; i < _noLayers - 2; i++)
+        for (int i = 0; i < _noLayers - 1; i++)
         {
             current = _layers[i].feedForward(current); // feed forward through whole network
         }

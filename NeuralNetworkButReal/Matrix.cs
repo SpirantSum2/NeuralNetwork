@@ -41,7 +41,7 @@ namespace NeuralNetworkButReal
             
             for (int i = 0; i < _height; i++)
             {
-                _vals[0, i] = values[i];
+                _vals[i, 0] = values[i];
             }
         }
 
@@ -92,7 +92,7 @@ namespace NeuralNetworkButReal
                    
                    for (int k = 0; k < dotSize; k++)
                    {
-                       total += a.GetValue(i, k) * b.GetValue(k, j);
+                       total += a.GetValue(k, i) * b.GetValue(j, k);
                    }
 
                    newVals[i, j] = total;
@@ -115,7 +115,7 @@ namespace NeuralNetworkButReal
             {
                 for (int j = 0; j < a.GetWidth(); j++)
                 {
-                    newVals[i, j] = a.GetValue(i, j) + b.GetValue(i, j);
+                    newVals[i, j] = a.GetValue(j, i) + b.GetValue(j, i);
                 }
             }
 

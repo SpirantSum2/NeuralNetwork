@@ -4,9 +4,13 @@ public class Layer
 {
     private Matrix<double> _weights;
     private Matrix<double> _biases;
+    private int _size, _nextSize;
     
     public Layer(int size, int nextSize)
     {
+        _size = size;
+        _nextSize = nextSize;
+        
         Random r = new Random();
 
         double[,] weightArray = new double[nextSize, size]; // size of current layer should be width
@@ -34,11 +38,18 @@ public class Layer
     private double sigmoidDeriv(double x)
     {
         double s = sigmoid(x);
-        return x * (1 - x);
+        return s * (1 - s);
     }
 
     public Matrix<double> feedForward(Matrix<double> values)
     {
-        return _weights * values + _biases;
+        Matrix<double> ret = _weights * values + _biases;
+
+        for (int i = 0; i < _nextSize; i++)
+        {
+            ret.SetValue(0, i, sigmoid(ret.GetValue(0, i)));
+        }
+
+        return ret;
     }
 }
