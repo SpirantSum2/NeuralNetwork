@@ -7,8 +7,7 @@ namespace NeuralNetworkButReal
                            // There isn't INumber until .NET 7????? How did people cope until 2023
     {
         private int _width, _height; 
-        private T[,] _vals; // strange notation for 2D arrays, but I'm guessing it promises it remains a rectangle
-                           // rather than just being an array of pointers to god knows where 
+        private T[,] _vals; // this type of 2d array guarantees that it remains a rectangle, unlike the T[][] jagged array 
         public Matrix(int w, int h, T[,] values) // constructor
         {
             if (w <= 0)
@@ -42,6 +41,22 @@ namespace NeuralNetworkButReal
             for (int i = 0; i < _height; i++)
             {
                 _vals[i, 0] = values[i];
+            }
+        }
+
+        public Matrix(Matrix<T> copyMatrix) // method for creating a copy of a Matrix
+        {
+            _width = copyMatrix.GetWidth();
+            _height = copyMatrix.GetHeight();
+
+            _vals = new T[_height,_width];
+            
+            for (int i = 0; i < _width; i++)
+            {
+                for (int j = 0; j < _height; j++)
+                {
+                    _vals[j, i] = copyMatrix.GetValue(i, j);
+                }
             }
         }
 
