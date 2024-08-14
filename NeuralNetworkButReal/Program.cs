@@ -6,7 +6,7 @@ Console.WriteLine("Hello, World!");
 int[] sizes = new int[3] { 2, 3, 1 };
 var a = new Network(sizes);
 
-double[] inputs = new double[2] { 0.0f, 1.0f };
+double[] inputs = new double[2] { 1.0f, 1.0f };
 
 double[] output = a.predict(inputs);
 
