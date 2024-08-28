@@ -23,7 +23,7 @@ public class Layer
         {
             for (int j = 0; j < size; j++)
             {
-                weightArray[i, j] = r.NextDouble() * 2 - 1; // Random double between -1 and 1
+                weightArray[i, j] = r.NextDouble() - 0.5; // Random double between -0.5 and 0.5
             }
 
             biasArray[i, 0] = r.NextDouble() * 2 - 1;

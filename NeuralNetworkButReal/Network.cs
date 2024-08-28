@@ -89,7 +89,7 @@ public class Network
                     // if we take the partial derivative of the formula with respect to the i'th predicted value, 
                     // d L/d Predi = 2*(Predi - Actuali) 
                     
-                    partialDerivs[i] = 2 * (predicted[i] - answers[trainIndex, i]) / lastLayerSize; 
+                    partialDerivs[i] = -2 * (predicted[i] - answers[trainIndex, i]) / lastLayerSize; 
                 }
 
                 Matrix<double> p = new Matrix<double>(lastLayerSize, partialDerivs);

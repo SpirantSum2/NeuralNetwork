@@ -16,7 +16,8 @@ Console.WriteLine(output[0].ToString());
 double[,] trainData = new double[4, 2] { { 0, 0 }, { 0, 1 }, { 1, 0 }, { 1, 1 } };
 double[,] ans = new double[4, 1] { { 0 }, { 1 }, { 1 }, { 0 } };
 
-a.train(trainData, ans, epochs:10000, learningRate:0.01);
+a.train(trainData, ans, epochs:10000, learningRate:0.001);
 
 output = a.predict(inputs);
 Console.WriteLine(output[0].ToString());
+
